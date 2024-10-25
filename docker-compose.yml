@@ -13,14 +13,14 @@ services:
       - mongo_data:/data/db
 
   frontend:
-    build: ./client
+    image: frontend:latest
     ports:
       - "3000:3000"
     environment:
       - REACT_APP_BASE_URL=http://localhost:9000
 
   backend:
-    build: ./server
+    image: backend:latest
     ports:
       - "9000:9000"
     environment:

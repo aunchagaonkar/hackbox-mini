@@ -13,11 +13,11 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
+# Run the addAdmin.js script to add admin
+RUN node addAdmin.js
+
 # Expose the port the app runs on
 EXPOSE 9000
 
 # Start the application
 CMD ["npm", "run", "dev"]
-
-# Run the addAdmin.js script to add admin
-RUN node addAdmin.js
